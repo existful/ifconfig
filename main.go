@@ -162,7 +162,7 @@ func mainHandler(c *gin.Context) {
 		} else if wantsJS {
 			c.Writer.Header().Set("Content-Type", "application/javascript")
 			response, _ := json.Marshal(c.Keys)
-			c.String(200, "ifconfig_io = %v\n", string(response))
+			c.String(200, "ifconfig = %v\n", string(response))
 		} else {
 			c.Writer.Header().Set("Content-Type", "text/plain; charset=utf-8")
 			c.YAML(200, c.Keys)
@@ -172,7 +172,7 @@ func mainHandler(c *gin.Context) {
 		if wantsJS {
 			c.Writer.Header().Set("Content-Type", "application/javascript")
 			response, _ := json.Marshal(c.Request.Header)
-			c.String(200, "ifconfig_io = %v\n", string(response))
+			c.String(200, "ifconfig = %v\n", string(response))
 		} else {
 			c.JSON(200, c.Request.Header)
 		}
