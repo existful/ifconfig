@@ -1,4 +1,7 @@
 name: GHCR Container Retention
+permissions:
+  contents: read
+  packages: write
 on:
   workflow_dispatch:
   schedule:
